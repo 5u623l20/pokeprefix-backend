@@ -1,47 +1,47 @@
 account:
-id			: primary key
-nickname		: varchar(20)
-date_joined		: date
+id										: primary key
+nickname							: varchar(20)
+date_joined						: date
 date_last_submission	: date
-date_last_seen		: date
-country_code		: varchar(3)
-active			: bool
+date_last_seen				: date
+country_code					: varchar(3)
+active								: bool
 
 prefix:
-id			: primary key
-prefix			: inet6num
-name_id			: foreign_key 'name.id'
-date_seen_first		: date
-date_seen_last		: date
-season_first_seen	: foreign_key 'season.id'
+id										: primary key
+prefix								: inet6num
+name_id								: foreign_key 'name.id'
+date_seen_first				: date
+date_seen_last				: date
+season_first_seen			: foreign_key 'season.id'
 
 observation:
-id			: primary key
-prefix_id		: foreign_key 'prefix.id'
-season_id		: foreign_key 'season.id'
-account_id  : foreign_key 'account.id'
-location		: geo-location
-point       : int
+id										: primary key
+prefix_id							: foreign_key 'prefix.id'
+season_id							: foreign_key 'season.id'
+account_id  					: foreign_key 'account.id'
+location							: geo-location
+point       					: int
 
 name:
-id			: primary key
-name_1			: foreign_key words.id
-name_2			: foreign_key words.id
-name_3			: foreign_key words.id
-prefix_id		: foreign_key 'prefix.id'
+id										: primary key
+name_1								: foreign_key words.id
+name_2								: foreign_key words.id
+name_3								: foreign_key words.id
+prefix_id							: foreign_key 'prefix.id'
 
 score:
-id			: primary key
-account_id		: foreign_key 'account.id'
-season_id		: foreign_key 'season.id'
-value       : int
+id										: primary key
+account_id						: foreign_key 'account.id'
+season_id							: foreign_key 'season.id'
+value       					: int
 
 season:
-id			: primary key
-name			: varchar(100)
-period_start		: date
-period_duration		: int (days)
+id										: primary key
+name									: varchar(100)
+period_start					: date
+period_duration				: int (days)
 
 words:
-id:  primary key
-name : varchar(20)
+id										: primary key
+name 									: varchar(20)
